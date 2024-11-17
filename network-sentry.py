@@ -53,9 +53,12 @@ previous_scan = []
 
 while True:
     scan_results = []
-    for _ in range(3):  # Perform 3 scans
+    scan_number = 0
+    for _ in range(5):  # Change this number for how many scans you want it to do, 5 is default 10 - 20 would remove almost all false-positives
         scan_results.extend(scan(ip_range))
-        time.sleep(1)  # Wait a bit before the next scan
+        scan_number += 1
+        time.sleep(0) #change this if you want the scans to be spread out (number is in seconds)
+        print("Scan " + str(scan_number) + "/5" " Complete") #if you change the above number update this numer to be the same so that it outputs correctly, but this is just for looks
 
     # Deduplicate results
     unique_devices = { (client['ip'], client['mac']) for client in scan_results }
@@ -64,9 +67,10 @@ while True:
     new_devices = [client for client in unique_clients_list if client not in previous_scan]
 
     output = print_result(unique_clients_list, new_devices)
+    print("\n")
     print(output)
 
     save_to_file(output, "scan_results.txt")
 
-    previous_scan = unique_clients_list  # Update previous scan results
-    time.sleep(1800)  # Sleep for 1800 seconds (30min)
+    previous_scan = unique_clients_list
+    time.sleep(1800)  # Sleep for 1800 seconds (30min) - change this if you want it to scan more or less frequently (in seconds)
