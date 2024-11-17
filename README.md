@@ -18,4 +18,5 @@ Must be run as root/sudo on Linux or Admin on Windows.
 
 ## Issues
 
-- Occasional false-positive, typically the more scans you run the less likely this is but it is being worked on to reduce these even further
+- Occasional false-positive, up the number of scans done to 10 - 20 for likely less false-positives. False-positives occur when a device is missed by the scans but is found later or doesn't respond during some scans but does later.
+  my reccomendation is to run the script as you plan to on 1 second delay (instead of default 1800) for 5 - 10 scans, note any false positives so you can recognize them during long-duration runtimes.
