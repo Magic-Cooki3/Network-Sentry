@@ -14,4 +14,8 @@ Must be run as root/sudo on Linux or Admin on Windows.
 ## Requirements
 
 - Python 3.x
-- Scapy library
+- Nmap for python (python-nmap module)
+
+## Issues
+
+- Occasional false-positive, typically the more scans you run the less likely this is but it is being worked on to reduce these even further
