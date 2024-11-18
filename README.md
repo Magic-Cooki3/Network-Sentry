@@ -16,6 +16,10 @@ Must be run as root/sudo on Linux or Admin on Windows.
 - Python 3.x
 - Nmap for python (python-nmap module)
 
+## Example Terminal Output
+![image](https://github.com/user-attachments/assets/01595795-e64f-410e-9515-c97697217400)
+
+
 ## Issues
 
 - Occasional false-positive, up the number of scans done to 10 - 20 for likely less false-positives. False-positives occur when a device is missed by the scans but is found later or doesn't respond during some scans but does later.
